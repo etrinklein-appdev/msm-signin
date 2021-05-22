@@ -28,7 +28,13 @@
           Movie
         </label>
 
-        <input type="text" id="movie_id_box" name="query_movie_id">
+        <select id="movie_id_box" name="query_movie_id">
+          <% @list_of_bookmarks.each do |bookmark|%>
+            <option value = "<%=bookmark.movie_id%>">
+              <%= bookmark.movie.title%>
+            </option>
+          <%end%>
+        </select>
       </div>
 
       <button>
